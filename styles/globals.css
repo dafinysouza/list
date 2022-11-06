@@ -24,3 +24,20 @@ a {
     background: black;
   }
 }
+
+.titulo {
+  margin: 30px 0;
+}
+
+.card {
+  margin-bottom: 15px;
+}
+#ultimas-tarefas {
+  margin-bottom: 180px;
+}
+
+footer.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
