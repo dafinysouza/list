@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import Navbar from '../src/componentes/Navbar';
+import Footer from '../src/componentes/Footer';
 
 export default function Home() {
   return (
@@ -9,24 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand mb-0 h1" href="/">Lista de tarefas</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Início</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/listas">Lista de tarefas</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
       
       <section id='banner'>
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
@@ -67,22 +52,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-          <p class="h5">Lista de tarefas</p>
-
-          <ul className="list-unstyled">
-            <li className="">
-              <a className="" href="#">Início</a>
-            </li>
-            <li className="">
-              <a className="" href="#">Lista de tarefas</a>
-            </li>
-          </ul>
-          
-          <span class="text-muted">Todos os direitos reservados.</span>
-        </div>
-      </footer>
+      <Footer />
 
     </>
   )
