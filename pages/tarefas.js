@@ -9,10 +9,10 @@ export default function Lists() {
     title: "",
     description: "",
   });
+  const [stream, setStream] = useState(null);
 
   useEffect(() => {
     setTasks(JSON.parse(localStorage.getItem("tasks")) || []);
-    requestStream();
   }, []);
 
   function saveToStorage(storage) {
@@ -32,6 +32,8 @@ export default function Lists() {
       title: "",
       description: "",
     });
+
+    stopStream();
   }
 
   function requestStream() {
@@ -39,6 +41,7 @@ export default function Lists() {
       .getUserMedia({ video: true })
       .then((stream) => {
         const video = document.querySelector("#video");
+        setStream(stream);
 
         video.srcObject = stream;
         video.play();
@@ -46,6 +49,18 @@ export default function Lists() {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  function stopStream() {
+    const video = document.querySelector("#video");
+
+
+    stream.getTracks().forEach(function (track) {
+      track.stop();
+    });
+
+    video.src = "";
+    setStream(null);
   }
 
   return (
@@ -63,6 +78,7 @@ export default function Lists() {
         className="btn btn-primary-circle"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
+        onClick={requestStream}
       >
         <i className="fa-solid fa-plus"></i>
       </button>
