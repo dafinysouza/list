@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer () {
   return (
     <>
@@ -7,10 +9,10 @@ export default function Footer () {
 
           <ul className="list-unstyled">
             <li>
-              <a href="/">Início</a>
+              <Link href="/">Início</Link>
             </li>
             <li>
-              <a href="/tarefas">Lista de tarefas</a>
+              <Link href="/tarefas">Lista de tarefas</Link>
             </li>
           </ul>
           
